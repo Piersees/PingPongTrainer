@@ -8,8 +8,6 @@
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-
-
     <application
         android:allowBackup="true"
         android:icon="@drawable/raquette"
@@ -26,7 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".NouveauMatchActivity"
             android:label="@string/title_activity_nouveau_match"
@@ -52,8 +49,26 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCgv_jDD-_il9SG5HGd8NkP5YxDBRPuNyE"/>
+            android:value="AIzaSyCgv_jDD-_il9SG5HGd8NkP5YxDBRPuNyE" />
 
+        <activity
+            android:name=".GraphActivity"
+            android:label="@string/title_activity_graph"
+            android:parentActivityName=".StatsMatchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="haikal.android.fr.pingpong.StatsMatchActivity" />
+        </activity>
+        <activity
+            android:name=".StatsMatchActivity"
+            android:label="@string/title_activity_stats_match"
+            android:parentActivityName=".InMatchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="haikal.android.fr.pingpong.InMatchActivity" />
+        </activity>
     </application>
 
 </manifest>

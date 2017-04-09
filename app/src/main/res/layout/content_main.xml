@@ -16,23 +16,6 @@
     >
 
     <Button
-        android:text="Nouveau Match"
-        android:layout_width="350px"
-        android:layout_height="400px"
-        android:id="@+id/NvMatch"
-        android:background="@drawable/nv_match"
-        android:layout_marginBottom="13dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"
-        android:elevation="24dp"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:onClick="myClickHandler"
-        />
-
-    <Button
         android:text="Stats Club"
         android:layout_width="350px"
         android:layout_height="350px"
@@ -46,4 +29,20 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Button"
         android:onClick="myClickHandler"
         />
+
+    <Button
+        android:text="Nouveau Match"
+        android:layout_width="350px"
+        android:layout_height="400px"
+        android:id="@+id/NvMatch"
+        android:background="@drawable/nv_match"
+        android:elevation="24dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:onClick="myClickHandler"
+        android:layout_marginBottom="15dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp" />
 </RelativeLayout>

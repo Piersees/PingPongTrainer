@@ -13,13 +13,250 @@
     tools:context="haikal.android.fr.pingpong.InMatchActivity"
     tools:showIn="@layout/activity_in_match">
 
+    <Button
+        android:text="Match Fini"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/matchEnd"
+        android:onClick="myClickHandler"
+        />
+
     <TextView
         android:text="Match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="35dp"
         android:id="@+id/textView2"
         android:textAppearance="@style/TextAppearance.AppCompat.Title"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:text="J1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView6"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginStart="20dp" />
+
+    <TextView
+        android:text="J2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView7"
+        android:layout_marginRight="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_alignBaseline="@+id/textView6"
+        android:layout_alignBottom="@+id/textView6"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreJ2"
+        android:layout_alignBaseline="@+id/scoreJ1"
+        android:layout_alignBottom="@+id/scoreJ1"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <TextView
+        android:text="06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scoreJ1"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/textView6"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <TextView
+        android:text="Service :"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView10"
+        android:layout_below="@+id/scoreJ1"
+        android:layout_alignLeft="@+id/scoreJ1"
+        android:layout_alignStart="@+id/scoreJ1" />
+
+    <TextView
+        android:text="J1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView10"
+        android:layout_alignLeft="@+id/scoreJ2"
+        android:layout_alignStart="@+id/scoreJ2"
+        android:id="@+id/service" />
+
+
+    <View
+        android:layout_width="2dp"
+        android:layout_height="100dp"
+        android:background="@android:color/black"
+        android:layout_below="@id/textView2"
+        android:layout_alignRight="@id/scoreJ1"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/scoreJ1"
+        android:layout_toEndOf="@+id/scoreJ1" />
+
+    <TextView
+        android:text="2eme Balle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView13"
+
+        android:layout_alignBaseline="@+id/textView12"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_toLeftOf="@+id/service"
+        android:layout_toStartOf="@+id/service" />
+
+    <Button
+        android:text="Ace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ace2balle"
+        android:layout_alignBaseline="@+id/button3"
+        android:layout_alignBottom="@+id/button3"
+        android:layout_alignLeft="@+id/textView10"
+        android:layout_alignStart="@+id/textView10"
+        android:onClick="myClickHandler"
+        />
+
+    <Button
+        android:text="Faute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fautebutton"
+        android:layout_alignBaseline="@+id/ace2balle"
+        android:layout_alignBottom="@+id/ace2balle"
+        android:layout_alignLeft="@+id/matchEnd"
+        android:layout_alignStart="@+id/matchEnd"
+        android:onClick="myClickHandler"
+        />
+
+    <TextView
+        android:text="1er Balle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="26dp"
+        android:id="@+id/textView12"
+        android:layout_below="@+id/textView10"
+        android:layout_alignLeft="@+id/textView6"
+        android:layout_alignStart="@+id/textView6" />
+
+    <Button
+        android:text="Ace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_below="@+id/textView12"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="17dp"
+        android:onClick="myClickHandler"
+        />
+
+    <TextView
+        android:text="Echange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="21dp"
+        android:id="@+id/echange"
+        android:layout_below="@+id/ace2balle"
+        android:layout_toRightOf="@+id/scoreJ1"
+        android:layout_toEndOf="@+id/scoreJ1" />
+
+    <TextView
+        android:text="J2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView16"
+        android:layout_alignRight="@+id/textView16"
+        android:layout_alignEnd="@+id/textView16"
+        android:layout_marginTop="25dp"
+        android:id="@+id/textView17" />
+
+    <TextView
+        android:text="J1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/textView16"
+        android:layout_below="@+id/echange"
+        android:layout_alignLeft="@+id/textView12"
+        android:layout_alignStart="@+id/textView12" />
+
+    <Button
+        android:text="Attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ptAtkJ1"
+        android:layout_alignLeft="@+id/ptAtkJ2"
+        android:layout_alignStart="@+id/ptAtkJ2"
+        android:layout_below="@+id/echange"
+        android:layout_above="@+id/ptAtkJ2"
+        android:onClick="myClickHandler"
+        />
+
+    <Button
+        android:text="Attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ptAtkJ2"
+        android:layout_alignBaseline="@+id/textView17"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_toRightOf="@+id/textView12"
+        android:layout_toEndOf="@+id/textView12"
+        android:onClick="myClickHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button9"
+        android:text="Defense"
+        android:layout_below="@+id/ptDefJ2"
+        android:layout_alignLeft="@+id/ptDefJ2"
+        android:layout_alignStart="@+id/ptDefJ2"
+        android:onClick="myClickHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/ptDefJ2"
+        android:text="Defense"
+        android:layout_below="@+id/echange"
+        android:layout_toRightOf="@+id/textView10"
+        android:layout_toEndOf="@+id/textView10"
+        android:onClick="myClickHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fautej2"
+        android:text="Faute"
+        android:layout_alignBaseline="@+id/ptAtkJ2"
+        android:layout_alignBottom="@+id/ptAtkJ2"
+        android:layout_toRightOf="@+id/button9"
+        android:layout_toEndOf="@+id/button9"
+        android:onClick="myClickHandler"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fautej1"
+        android:text="Faute"
+        android:layout_alignBaseline="@+id/textView16"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_toRightOf="@+id/button9"
+        android:layout_toEndOf="@+id/button9"
+        android:onClick="myClickHandler"/>
+
 </RelativeLayout>

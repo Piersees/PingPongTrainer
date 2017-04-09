@@ -8,4 +8,6 @@
     <string name="title_activity_nouveau_match">NouveauMatchActivity</string>
     <string name="title_activity_in_match">InMatchActivity</string>
     <string name="title_activity_stats_club">StatsClubActivity</string>
+    <string name="title_activity_graph">GraphActivity</string>
+    <string name="title_activity_stats_match">StatsMatchActivity</string>
 </resources>

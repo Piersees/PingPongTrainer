@@ -8,16 +8,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-public class InMatchActivity extends AppCompatActivity {
+public class StatsMatchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_in_match);
+        setContentView(R.layout.activity_stats_match);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,19 +30,18 @@ public class InMatchActivity extends AppCompatActivity {
 
     public void myClickHandler(View view) {
 
-        final Intent intentSM = new Intent(this, StatsMatchActivity.class);
+        final Intent intentG = new Intent(this, GraphActivity.class);
 
 
         switch (view.getId()) {
 
-            case R.id.matchEnd:
+            case R.id.graphs:
 
-                startActivity(intentSM);
+                startActivity(intentG);
 
                 break;
 
 
         }
-
     }
 }
