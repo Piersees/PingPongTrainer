@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="e79aa3d9a16f8c9f16377c0608de70a8f31e5d80">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-25.1.0_3bf6dd4c5c77efb33f38559ce9301bb4784e35a9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="aee64634871d88a419d59eb743c1258a60f19700">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-25.1.0_f84f1f58c623ce429a97d887b0812b97cbd047e0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="31e87487f9e0b80f9a88c98707b576fb7ebcc108">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_08744898afaa2f5bb2c64ccf916387014899071c\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\25.1.0\support-annotations-25.1.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="64cb6b229a8bdfd907bc8dd46839a0053e4c018d">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.1.0_a05a79c9731c52b467afe1b5b8a99f95152164c2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="6fb6ac3e8d3b9013819920d9ea11f3803c4c0033">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-25.1.0_4f086ee66663a7a9aae6d1a320499ab194ff77dc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="ca3c7aa31e2726a400a6e552b93cb9f63c9a1e6d">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-25.1.0_2a3b752e5ab2f4fe89b506dd45f8edd3bf1af5e2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-25.1.0_e82cb819660a5a5cdbbe1c7f23ef5ec11be33dac\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="2a53c4f3518116b8c6aee0e477233f0f7da8616f">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-25.1.0_0196c6571c63ad8e0c981c039be1119126e38f4a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="7ed1e1f2b2bebb1f8ff4d2d345bca019ec44ea8a">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_b6ca4663768032aa687bff82c0710bbd78a978de\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\transition\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="d38084015027549951cbaea5d5f6fb795cc81151">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-transition-25.1.0_d01417ca4a0c0c4517c6eca37370c0a64b9754b6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="f02263e35e52668dd17b73bf961437e3d562b35f">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-25.1.0_c068f9a44d284008b1665f0ec83bc6a7e335c80e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\design\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="30103d98fa5ed824b54af839c85e2111f9bde8ec">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-25.1.0_526d374715a3aca7a7b0cbcad48e959891409069\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="0a0ef86b7fa568a52bf6214a0326ca1f1d618da7">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-25.1.0_072b231d8e871187888efb443cddfdfd3eaa995e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="1630658fbc2d222b988603c27b4a4249586fbfe7">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-25.1.0_c8d06216a175a91b9ea7128bbe96c3caaaf2f85e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\25.1.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="b266c8faa5af72e579b9da36ef35053ffed6ac64">
+        <dex dex="C:\Users\PIERRE\Desktop\Travail\ING4\Mobile Programming\PingPong\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-25.1.0_fad0a8c3671eeacc4a05d2a6d835880a43e16c92\classes.dex" />
+    </item>
+
+</items>
