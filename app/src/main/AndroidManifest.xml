@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="haikal.android.fr.pingpong">
 
+    <uses-permission android:name="com.haikal.android.fr.pingpong.permission.MAPS_RECEIVE" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -52,7 +54,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCgv_jDD-_il9SG5HGd8NkP5YxDBRPuNyE"/>
+            android:value="AIzaSyD4WGONlyKzAGQWNkQNDcs4fJZ69aH2dV4"/>
 
     </application>
 
