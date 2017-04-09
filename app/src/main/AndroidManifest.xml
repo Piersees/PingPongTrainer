@@ -18,6 +18,28 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NouveauMatchActivity"
+            android:label="@string/title_activity_nouveau_match"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".InMatchActivity"
+            android:label="@string/title_activity_in_match"
+            android:parentActivityName=".NouveauMatchActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="haikal.android.fr.pingpong.NouveauMatchActivity" />
+        </activity>
+        <activity
+            android:name=".StatsClubActivity"
+            android:label="@string/title_activity_stats_club"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="haikal.android.fr.pingpong.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

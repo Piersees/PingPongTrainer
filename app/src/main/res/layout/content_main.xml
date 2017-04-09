@@ -11,10 +11,39 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="haikal.android.fr.pingpong.MainActivity"
-    tools:showIn="@layout/app_bar_main">
+    tools:showIn="@layout/app_bar_main"
+    android:background="@drawable/tablepp"
+    >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <Button
+        android:text="Nouveau Match"
+        android:layout_width="350px"
+        android:layout_height="400px"
+        android:id="@+id/NvMatch"
+        android:background="@drawable/nv_match"
+        android:layout_marginBottom="13dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:elevation="24dp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:onClick="myClickHandler"
+        />
+
+    <Button
+        android:text="Stats Club"
+        android:layout_width="350px"
+        android:layout_height="350px"
+        android:id="@+id/StatsClub"
+        android:elevation="24dp"
+        android:background="@drawable/stats_club"
+        android:layout_marginTop="102dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textAppearance="@style/TextAppearance.AppCompat.Button"
+        android:onClick="myClickHandler"
+        />
 </RelativeLayout>
