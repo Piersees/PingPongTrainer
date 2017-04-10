@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="fouls_array">
+        <item>Behavior</item>
+        <item>Lets</item>
+        <item>Double Missed Service</item>
+        <item>Out of Range</item>
+    </array>
+
+</resources>

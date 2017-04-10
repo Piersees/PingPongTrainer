@@ -1,12 +1,15 @@
 package haikal.android.fr.pingpong;
 
 import android.content.Intent;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
 import android.os.Bundle;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
@@ -17,6 +20,8 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.FrameLayout;
+import android.widget.RadioButton;
+import android.widget.TextClock;
 import android.widget.TextView;
 
 
@@ -37,6 +42,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.CameraUpdateFactory;
 
+import java.util.Calendar;
+
 public class NouveauMatchActivity extends AppCompatActivity
         implements OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
@@ -46,6 +53,13 @@ public class NouveauMatchActivity extends AppCompatActivity
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
     private CameraPosition mCameraPosition;
+
+    TextView player1;
+    TextView player2;
+    TextClock time;
+    RadioButton server1;
+    RadioButton server2;
+
 
     // The entry point to Google Play services, used by the Places API and Fused Location Provider.
     private GoogleApiClient mGoogleApiClient;
@@ -70,6 +84,12 @@ public class NouveauMatchActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+
+        player1 = (TextView) findViewById(R.id.Joueur1);
+        player2 = (TextView) findViewById(R.id.Joueur2);
+        time = (TextClock) findViewById(R.id.textClock);
+        server1 = (RadioButton) findViewById(R.id.server1);
+        server2 = (RadioButton) findViewById(R.id.server2);
 
 
         // Build the Play services client for use by the Fused Location Provider and the Places API.
@@ -106,6 +126,7 @@ public class NouveauMatchActivity extends AppCompatActivity
     }
 
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public void myClickHandler(View view) {
 
         final Intent intentIM = new Intent(this, InMatchActivity.class );
@@ -113,6 +134,25 @@ public class NouveauMatchActivity extends AppCompatActivity
         switch (view.getId()){
 
             case R.id.Start :
+                DatabaseHelper mDbHelper = new DatabaseHelper(view.getContext());
+
+                intentIM.putExtra("player1", player1.getText().toString());
+                intentIM.putExtra("player2", player2.getText().toString());
+
+                Calendar c = Calendar.getInstance();
+                SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
+                String formattedDate = df.format(c.getTime());
+                intentIM.putExtra("time", formattedDate);
+
+                intentIM.putExtra("location", "Paris");
+
+                if(server1.isChecked()){
+                    intentIM.putExtra("server", "1");
+                }else {
+                    if(server2.isChecked()){
+                        intentIM.putExtra("server", "2");
+                    }
+                }
 
                 startActivity(intentIM);
 
