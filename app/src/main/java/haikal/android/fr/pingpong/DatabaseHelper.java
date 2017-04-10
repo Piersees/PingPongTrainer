@@ -18,8 +18,12 @@ import haikal.android.fr.pingpong.model.Sets;
 
 public class DatabaseHelper extends SQLiteOpenHelper{
 
+    private String msg;
+
     // Logcat tag
     private static final String LOG = "DatabaseHelper";
+
+    private static final String TAG = DatabaseHelper.class.getSimpleName();
 
     // Database version
     private static final int DATABASE_VERSION = 1;
@@ -50,6 +54,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String COLUMN_WINNER = "winner_id";
     public static final String COLUMN_MATCH = "match_id";
     public static final String COLUMN_SET = "set_id";
+
     /// PLAYERS - Columns
     public static final String COLUMN_PLAYERS_NAME = "name";
 
@@ -78,14 +83,14 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         private static final String CREATE_TABLE_PLAYERS = "CREATE TABLE "
                 + TABLE_PLAYERS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_PLAYERS_NAME + " TEXT" + ")";
-        // MATCHES
+
+    // MATCHES
         private static final String CREATE_TABLE_MATCHES = "CREATE TABLE "
-                + TABLE_MATCHES + "(" + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_PLAYERONE + " INTEGER,"
-                + COLUMN_PLAYERTWO + " INTEGER," + COLUMN_WINNER + " INTEGER,"
-                + COLUMN_MATCHES_BEGIN_TIME + " DATETIME,"
-                + COLUMN_MATCHES_END_TIME + " DATETIME,"+ COLUMN_MATCHES_LATITUDE + " INTEGER,"
-                + COLUMN_MATCHES_LONGITUDE + " INTEGER"
-                + ")";
+                + TABLE_MATCHES + "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                + COLUMN_PLAYERONE + " INTEGER," + COLUMN_PLAYERTWO + " INTEGER," + COLUMN_WINNER + " INTEGER,"
+                + COLUMN_MATCHES_BEGIN_TIME + " TEXT," + COLUMN_MATCHES_END_TIME + " TEXT,"
+                + COLUMN_MATCHES_LATITUDE + " REAL," + COLUMN_MATCHES_LONGITUDE + " REAL" + ")";
+
         // SETS
 
         private static final String CREATE_TABLE_SETS = "CREATE TABLE "
@@ -142,6 +147,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
+        msg = (String) context.getText(R.string.user_exists);
     }
 
     @Override
@@ -214,6 +220,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         // if the player already exists
         if(c!=null && c.getCount()>0){
             player_id = c.getInt(c.getColumnIndex(COLUMN_ID));
+            Log.d(TAG, msg);
             return player_id;
         }
         // if the player doesn't exist yet

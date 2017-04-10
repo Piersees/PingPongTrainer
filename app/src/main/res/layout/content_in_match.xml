@@ -165,7 +165,7 @@
         />
 
     <TextView
-        android:text="Echange"
+        android:text="@string/exchange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="21dp"
@@ -283,13 +283,8 @@
         android:id="@+id/fautej1"
         android:text="@string/foul"
         android:onClick="myClickHandler"
-        android:layout_above="@+id/fautej2"
-        android:layout_toEndOf="@+id/ptDefJ1"
-        android:layout_alignBaseline="@+id/fautebutton"
-        android:layout_alignBottom="@+id/fautebutton"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignLeft="@+id/fautebutton"
-        android:layout_alignStart="@+id/fautebutton" />
+        android:layout_below="@+id/echange"
+        android:layout_toRightOf="@+id/ptDefJ2"
+        android:layout_toEndOf="@+id/ptDefJ2" />
 
 </RelativeLayout>

@@ -37,6 +37,8 @@
     <string name="start">Start !</string>
     <string name="server">Server</string>
     <string name="undisptime">Time can\'t be displayed</string>
+    <string name="user_exists">This player exists in the database</string>
+    <string name="exchange">Exchange</string>
 
 
 </resources>

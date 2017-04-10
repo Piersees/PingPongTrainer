@@ -20,9 +20,10 @@
         android:layout_above="@+id/Joueur2"
         android:layout_marginBottom="11dp"
         android:id="@+id/textView3"
-        android:layout_toLeftOf="@+id/Joueur1"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView5"
+        android:layout_alignEnd="@+id/textView5" />
 
     <TextView
         android:text="@string/player2"
@@ -31,9 +32,10 @@
         android:layout_alignBottom="@+id/Joueur2"
         android:layout_marginBottom="12dp"
         android:id="@+id/textView4"
-        android:layout_toLeftOf="@+id/Joueur2"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_alignEnd="@+id/textView3" />
 
     <TextView
         android:text="Match"
@@ -74,6 +76,7 @@
         android:layout_alignParentEnd="true"
         android:layout_alignBottom="@+id/Joueur2"
         android:layout_alignTop="@+id/Joueur1"
+        android:id="@+id/radioGroup2"
         android:checkedButton="@+id/server1">
 
         <RadioButton
@@ -98,29 +101,6 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true" />
     </RadioGroup>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="28dp"
-        android:id="@+id/Joueur1"
-        android:text="Name"
-        android:layout_below="@+id/match"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/Joueur2"
-        android:layout_below="@+id/Joueur1"
-        android:layout_alignLeft="@+id/Joueur1"
-        android:layout_alignStart="@+id/Joueur1" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -149,5 +129,33 @@
             android:layout_marginRight="11dp"
             android:layout_marginEnd="11dp" />
     </RelativeLayout>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="29dp"
+        android:id="@+id/Joueur1"
+        android:text="Name"
+        android:layout_below="@+id/match"
+        android:layout_toLeftOf="@+id/Start"
+        android:layout_toEndOf="@+id/textView4"
+        android:layout_toStartOf="@+id/Start"
+        android:layout_toRightOf="@+id/textView4" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_marginTop="17dp"
+        android:id="@+id/Joueur2"
+        android:layout_below="@+id/Joueur1"
+        android:layout_alignLeft="@+id/textView4"
+        android:layout_alignStart="@+id/Joueur1"
+        android:layout_toStartOf="@+id/radioGroup2"
+        android:layout_toLeftOf="@+id/radioGroup2" />
 
 </RelativeLayout>

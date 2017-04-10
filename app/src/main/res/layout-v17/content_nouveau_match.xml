@@ -14,28 +14,6 @@
     tools:showIn="@layout/activity_nouveau_match">
 
     <TextView
-        android:text="@string/player1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/Joueur2"
-        android:layout_marginBottom="11dp"
-        android:id="@+id/textView3"
-        android:layout_toLeftOf="@+id/Joueur1"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
-        android:text="@string/player2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/Joueur2"
-        android:layout_marginBottom="12dp"
-        android:id="@+id/textView4"
-        android:layout_toLeftOf="@+id/Joueur2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:text="Match"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -45,15 +23,152 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:text="@string/startTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView4"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="37dp"
-        android:id="@+id/textView5" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_marginTop="40dp"
+        android:weightSum="1">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_marginTop="30dp">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="64dp"
+                android:layout_height="100dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:weightSum="1"
+                android:paddingTop="10dp">
+
+                <TextView
+                    android:text="@string/player2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/Joueur2"
+                    android:layout_marginBottom="12dp"
+                    android:id="@+id/textView4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignRight="@+id/textView3"
+                    android:layout_alignEnd="@+id/textView3"
+                    android:layout_weight="0.32" />
+
+                <TextView
+                    android:text="@string/player1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/Joueur2"
+                    android:layout_marginBottom="11dp"
+                    android:id="@+id/textView3"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignRight="@+id/textView5"
+                    android:layout_alignEnd="@+id/textView5"
+                    android:layout_weight="0.36" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="200dp"
+                android:layout_height="102dp"
+                android:weightSum="1">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text="Name"
+                    android:ems="10"
+                    android:id="@+id/Joueur2"
+                    android:layout_below="@+id/Joueur1"
+                    android:layout_alignLeft="@+id/Joueur1"
+                    android:layout_alignStart="@+id/Joueur1"
+                    android:layout_alignRight="@+id/Joueur1"
+                    android:layout_alignEnd="@+id/Joueur1" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/Joueur1"
+                    android:text="Name"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+
+            </LinearLayout>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignBottom="@+id/Joueur2"
+                android:layout_alignTop="@+id/Joueur1"
+                android:checkedButton="@+id/server1"
+                android:id="@+id/radioGroup2"
+                android:layout_toEndOf="@+id/Joueur2"
+                android:layout_alignLeft="@+id/Start"
+                android:layout_alignStart="@+id/Start">
+
+                <RadioButton
+                    android:text="@string/server"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/server1"
+                    android:layout_weight="1"
+                    android:layout_alignTop="@+id/Joueur2"
+                    android:layout_alignLeft="@+id/server2"
+                    android:layout_alignStart="@+id/server2" />
+
+                <RadioButton
+                    android:text="@string/server"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/server2"
+                    android:layout_weight="1"
+                    android:layout_marginRight="11dp"
+                    android:layout_marginEnd="11dp"
+                    android:layout_above="@+id/Joueur2"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="28dp"
+            android:layout_weight="0.03">
+
+            <TextView
+                android:text="@string/startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView4"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/textView5"
+                android:layout_weight="0.31" />
+
+            <TextClock
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textClock"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_weight="0.74" />
+        </LinearLayout>
+    </LinearLayout>
 
 
     <Button
@@ -67,75 +182,11 @@
         android:onClick="myClickHandler"
         />
 
-    <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignBottom="@+id/Joueur2"
-        android:layout_alignTop="@+id/Joueur1"
-        android:checkedButton="@+id/server1">
-
-        <RadioButton
-            android:text="@string/server"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/server1"
-            android:layout_weight="1"
-            android:layout_alignTop="@+id/Joueur2"
-            android:layout_alignLeft="@+id/server2"
-            android:layout_alignStart="@+id/server2" />
-
-        <RadioButton
-            android:text="@string/server"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/server2"
-            android:layout_weight="1"
-            android:layout_marginRight="11dp"
-            android:layout_marginEnd="11dp"
-            android:layout_above="@+id/Joueur2"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
-    </RadioGroup>
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="28dp"
-        android:id="@+id/Joueur1"
-        android:text="Name"
-        android:layout_below="@+id/match"
-        android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/Joueur2"
-        android:layout_below="@+id/Joueur1"
-        android:layout_alignLeft="@+id/Joueur1"
-        android:layout_alignStart="@+id/Joueur1" />
-
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/match"
-        android:layout_alignStart="@+id/match" />
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/Start"
-        android:layout_below="@+id/textView5">
+        android:layout_marginTop="250dp">
 
         <fragment
             android:id="@+id/map"
@@ -147,6 +198,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="11dp"
             android:layout_marginEnd="11dp" />
+
     </RelativeLayout>
 
 </RelativeLayout>

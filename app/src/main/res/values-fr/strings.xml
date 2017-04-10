@@ -28,4 +28,6 @@
     <string name="start">Commencer !</string>
     <string name="startTime">Heure du début</string>
     <string name="undisptime">L\'heure ne peut pas être affichée</string>
+    <string name="user_exists">Ce joueur exist dans la base de données</string>
+    <string name="exchange">échange</string>
 </resources>
