@@ -30,4 +30,7 @@
     <string name="undisptime">L\'heure ne peut pas être affichée</string>
     <string name="user_exists">Ce joueur exist dans la base de données</string>
     <string name="exchange">échange</string>
+    <string name="takepic">Prendre photo</string>
+    <string name="no_cam">Problème d\'appareil photo</string>
+    <string name="no_cam_msg">Pas d\'appareil photo trouvé !</string>
 </resources>

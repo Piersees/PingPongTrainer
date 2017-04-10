@@ -181,6 +181,7 @@ public class NouveauMatchActivity extends AppCompatActivity
         // Get the current location of the device and set the position of the map.
         getDeviceLocation();
 
+
         googleMap.setOnMapClickListener(new com.google.android.gms.maps.GoogleMap.OnMapClickListener() {
 
             @Override
@@ -205,14 +206,24 @@ public class NouveauMatchActivity extends AppCompatActivity
         }
 
         if (mLocationPermissionGranted) {
-
+            LatLng position = new LatLng(mLastKnownLocation.getLatitude(),
+                    mLastKnownLocation.getLongitude());
+            marker = mMap.addMarker(new MarkerOptions()
+                    .position(position));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+            locationLat = position.latitude;
+            locationLong = position.longitude;
 
         } else {
             // Add a default marker, because the user hasn't selected a place.
-            mMap.addMarker(new MarkerOptions()
+            mMap.clear();
+            marker = mMap.addMarker(new MarkerOptions()
+                    .snippet(getString(R.string.default_info_snippet))
                     .title(getString(R.string.default_info_title))
-                    .position(mDefaultLocation)
-                    .snippet(getString(R.string.default_info_snippet)));
+                    .position(mDefaultLocation));
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(mDefaultLocation));
+            locationLat = mDefaultLocation.latitude;
+            locationLong = mDefaultLocation.longitude;
         }
     }
 

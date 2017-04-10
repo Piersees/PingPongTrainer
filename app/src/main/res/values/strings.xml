@@ -39,6 +39,10 @@
     <string name="undisptime">Time can\'t be displayed</string>
     <string name="user_exists">This player exists in the database</string>
     <string name="exchange">Exchange</string>
+    <string name="takepic">Take Picture</string>
+    <string name="no_cam">Camera issue</string>
+    <string name="no_cam_msg">No camera found !</string>
+    <string name="album_name">PingPongPics</string>
 
 
 </resources>

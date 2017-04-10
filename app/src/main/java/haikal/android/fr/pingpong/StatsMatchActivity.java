@@ -8,7 +8,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import haikal.android.fr.pingpong.model.Matches;
+
 public class StatsMatchActivity extends AppCompatActivity {
+
+    private DatabaseHelper dbh;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,6 +20,11 @@ public class StatsMatchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_stats_match);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        dbh = new DatabaseHelper(getApplicationContext());
+
+        Intent intent = getIntent();
+        long match_id = intent.getLongExtra("match",0);
 
         /*FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

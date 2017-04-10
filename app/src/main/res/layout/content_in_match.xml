@@ -287,4 +287,15 @@
         android:layout_toRightOf="@+id/ptDefJ2"
         android:layout_toEndOf="@+id/ptDefJ2" />
 
+    <Button
+        android:text="@string/takepic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="myClickHandler"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/p2name"
+        android:layout_alignStart="@+id/p2name"
+        android:layout_marginBottom="12dp"
+        android:id="@+id/buttonPic" />
+
 </RelativeLayout>

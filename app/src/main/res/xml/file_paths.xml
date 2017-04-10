@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="my_images" path="Android/data/haikal.android.fr.pingpong/files/Pictures" />
+    <external-path name="PingPong_Pics" path="." />
+     /data/user/0/haikal.android.fr....
+
+
+
+<files-path name="name" path="files/Pictures" />
+
+
+
+    <external-path name="my_images" path="Android/data/haikal.android.fr.pingpong/files/Pictures" />
+
+
+</paths>-->
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <external-path name="my_images" path="Android/data/haikal.android.fr.pingpong/files/Pictures" />
+    <files-path name="my_pics" path="haikal.android.fr.pingpong/files" />
+</paths>

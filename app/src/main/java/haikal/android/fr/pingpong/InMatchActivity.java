@@ -7,23 +7,34 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.icu.text.SimpleDateFormat;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.ContactsContract;
+import android.provider.MediaStore;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Calendar;
+import java.util.Date;
 
 import haikal.android.fr.pingpong.model.Matches;
 import haikal.android.fr.pingpong.DatabaseHelper;
 import haikal.android.fr.pingpong.model.Players;
 import haikal.android.fr.pingpong.model.Sets;
+import android.content.pm.PackageManager;
+
 
 public class InMatchActivity extends AppCompatActivity {
 
@@ -34,10 +45,111 @@ public class InMatchActivity extends AppCompatActivity {
     Players player1, player2;
     Matches match;
     Sets currentSet;
+    PackageManager pm;
+    private String path2;
 
     TextView nameJ1, nameJ2, p1name, p2name, scoreJ1, scoreJ2, setJ1, setJ2, server;
 
     private int currentFoul;
+
+
+    /**
+     *
+     *          PICTURES MANAGEMENT
+     *
+     */
+    private String currentPic;
+
+    static final int REQUEST_TAKE_PHOTO = 1;
+
+    @RequiresApi(api = Build.VERSION_CODES.N)
+
+    private void dispatchTakePictureIntent() {
+        pm = getApplicationContext().getPackageManager();
+        // if there is a camera
+        if(pm.hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+            Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+            // Ensure that there's a camera activity to handle the intent
+            if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
+                // Create the File where the photo should go
+                File photoFile = null;
+                try {
+                    photoFile = createImageFile();
+                } catch (IOException ex) {
+                    Log.d("InMatchActivity", "Issue creating the file.");
+                }
+                // Continue only if the File was successfully created
+                if (photoFile != null) {
+                    Uri photoURI = FileProvider.getUriForFile(this,
+                            "com.example.android.fileprovider",
+                            photoFile);
+
+                    String stringUri;
+                    stringUri = photoURI.toString();
+                    Log.d("InMatchActivity URI", stringUri);
+                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI);
+                    startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
+
+                    // add picture to database
+                    dbh.createPicture(match.getId(), stringUri);
+                    if (mCurrentPhotoPath != null) {
+                        //galleryAddPic();
+                        mCurrentPhotoPath = null;
+                    }
+
+                }
+            }
+        }
+        else{
+            this.showNoCamDialog();
+        }
+    }
+
+    String mCurrentPhotoPath;
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private File createImageFile() throws IOException {
+        // Create an image file name
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+        String imageFileName = "JPEG_MATCH_" + timeStamp + "_";
+        File storageDir = getExternalFilesDir(Environment.DIRECTORY_PICTURES);
+        File storageDir2 = getFilesDir();
+        File image = File.createTempFile(
+                imageFileName,  // prefix
+                ".jpg",         // suffix
+                storageDir      // directory
+        );
+        File image2 = File.createTempFile(
+                imageFileName,
+                ".jpg",
+                storageDir2
+        );
+        currentPic = imageFileName;
+
+        // Save a file: path for use with ACTION_VIEW intents
+        mCurrentPhotoPath = image.getAbsolutePath();
+        path2 = image2.getAbsolutePath();
+        Log.d("InMatchActivity", mCurrentPhotoPath);
+        Log.d("InMatchActivity", path2);
+        return image;
+        //return image2;
+
+    }
+/*
+    private void galleryAddPic() {
+        Intent mediaScanIntent = new Intent("android.intent.action.MEDIA_SCANNER_SCAN_FILE");
+        File f = new File(mCurrentPhotoPath);
+        Uri contentUri = Uri.fromFile(f);
+        mediaScanIntent.setData(contentUri);
+        this.sendBroadcast(mediaScanIntent);
+    }
+*/
+
+    /**
+     *
+     *  END OF PICTURE MANAGEMENT
+     *
+     */
+
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -139,6 +251,9 @@ public class InMatchActivity extends AppCompatActivity {
                 String formattedDate = df.format(c.getTime());
                 match.setEnd_time(formattedDate);
                 dbh.updateMatch(match);
+
+                intentSM.putExtra("match",match.getId());
+
                 startActivity(intentSM);
                 break;
 
@@ -239,6 +354,10 @@ public class InMatchActivity extends AppCompatActivity {
                 indice++;
                 this.serviceRoutine();
                 break;
+
+            case R.id.buttonPic:
+                this.dispatchTakePictureIntent();
+                break;
         }
     }
 
@@ -259,6 +378,11 @@ public class InMatchActivity extends AppCompatActivity {
         builder.show();
     }
 
+    public void showNoCamDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.no_cam).setMessage(R.string.no_cam_msg);
+        builder.show();
+    }
     public void createFoul(int foul, Players player, Sets set, Matches match){
         switch (foul){
             case 0:

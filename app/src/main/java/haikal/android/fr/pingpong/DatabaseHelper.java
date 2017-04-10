@@ -35,6 +35,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String TABLE_PLAYERS = "Players";
     public static final String TABLE_MATCHES = "Matches";
     public static final String TABLE_SETS = "Sets";
+    public static final String TABLE_PICTURES = "Pictures";
         // Special hits
     public static final String TABLE_ATTACK = "Attack_Points";
     public static final String TABLE_DEFENSE = "Defense_Points";
@@ -44,6 +45,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String TABLE_DOUBLE_MISSED_SERVICE = "DoubleMissedServices";
     public static final String TABLE_OUT_OF_RANGE = "OutOfRange";
     public static final String TABLE_BEHAVIOR = "Behavior";
+
+
 
 
     /// COMMON COLUMNS
@@ -77,9 +80,12 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     /// OUT OF RANGE - Columns --> ID, PLAYER, MATCH
     /// BEHAVIOR - Columns --> ID, PLAYER, MATCH
 
+    /// PICTURES - Columns
+    public static final String COLUMN_PICTURES_PATH = "pic_path";
+
     /// TABLE CREATE STATEMENTS
 
-        // PLAYERS
+    // PLAYERS
         private static final String CREATE_TABLE_PLAYERS = "CREATE TABLE "
                 + TABLE_PLAYERS + "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
                 + COLUMN_PLAYERS_NAME + " TEXT" + ")";
@@ -99,6 +105,11 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 + COLUMN_SETS_SCOREONE + " INTEGER," + COLUMN_SETS_SCORETWO + " INTEGER,"
                 + COLUMN_WINNER + " INTEGER," + COLUMN_MATCH + " INTEGER" + ")";
 
+
+        // PICTURES
+        private static final String CREATE_TABLE_PICTURES = "CREATE TABLE "
+                + TABLE_PICTURES + "(" + COLUMN_ID + " INTEGER PRIMARY KEY,"
+                + COLUMN_MATCH + " INTEGER," + COLUMN_PICTURES_PATH + " TEXT" + ")";
 
         // ATTAQUE
 
@@ -162,6 +173,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL(CREATE_TABLE_OUT_OF_RANGE);
         db.execSQL(CREATE_TABLE_PLAYERS);
         db.execSQL(CREATE_TABLE_SETS);
+        db.execSQL(CREATE_TABLE_PICTURES);
     }
 
     @Override
@@ -177,7 +189,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_OUT_OF_RANGE);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_PLAYERS);
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_SETS);
-
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PICTURES);
         //create new tables
         onCreate(db);
 
@@ -334,7 +346,17 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         return dms_id;
     }
+    public long createPicture(long match, String path){
+        SQLiteDatabase db = this.getWritableDatabase();
 
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_MATCH, match);
+        values.put(COLUMN_PICTURES_PATH, path);
+        // insert row
+        long pic_id = db.insert(TABLE_PICTURES, null, values);
+
+        return pic_id;
+    }
 
     public void updateSet(Sets set){
         SQLiteDatabase db = this.getWritableDatabase();
@@ -348,7 +370,6 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         db.update(TABLE_SETS, values, COLUMN_ID + " = ?",
                 new String[]{ String.valueOf(set.getId())});
     }
-
     public void updateMatch(Matches match){
         SQLiteDatabase db = this.getWritableDatabase();
 
