@@ -5,12 +5,12 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
-    <string name="title_activity_nouveau_match">NouveauMatchActivity</string>
-    <string name="title_activity_in_match">InMatchActivity</string>
-    <string name="title_activity_stats_club">StatsClubActivity</string>
+    <string name="title_activity_nouveau_match" translatable="false">NouveauMatchActivity</string>
+    <string name="title_activity_in_match" translatable="false">InMatchActivity</string>
+    <string name="title_activity_stats_club" translatable="false">StatsClubActivity</string>
 
-    <string name="title_activity_graph">GraphActivity</string>
-    <string name="title_activity_stats_match">StatsMatchActivity</string>
+    <string name="title_activity_graph" translatable="false">GraphActivity</string>
+    <string name="title_activity_stats_match" translatable="false">StatsMatchActivity</string>
 
 
     <string name="default_info_title">Default Location</string>
@@ -20,4 +20,23 @@
     <string name="pick_foul">Choose a foul</string>
     <string name="match_not_over">Oops !</string>
     <string name="message_not_over">The match isn\'t over yet!</string>
+
+    <string name="behaviorfoul">Behavior</string>
+    <string name="letfoul">Let</string>
+    <string name="dmsfoul">Double Missed Service</string>
+    <string name="oorfoul">Out of Range</string>
+    <string name="firstball">1st ball</string>
+    <string name="sndball">2nd ball</string>
+    <string name="foul">FOUL</string>
+    <string name="atk">ATTACK</string>
+    <string name="def">DEFENSE</string>
+    <string name="endmatch">End match</string>
+    <string name="player1">Player 1</string>
+    <string name="player2">Player 2</string>
+    <string name="startTime">Start time</string>
+    <string name="start">Start !</string>
+    <string name="server">Server</string>
+    <string name="undisptime">Time can\'t be displayed</string>
+
+
 </resources>

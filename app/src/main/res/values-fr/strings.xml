@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ping-Pong Trainer</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="default_info_snippet">Aucune localisation trouvée car la permission est refusée</string>
+    <string name="default_info_title">Localisation par défaut</string>
+    <string name="match_not_over">Oups!</string>
+    <string name="message_not_over">Le match n\'est pas encore fini!</string>
+    <string name="navigation_drawer_close">Fermer le panneau de navigation</string>
+    <string name="navigation_drawer_open">Ouvrir le panneau de navigation</string>
+    <string name="option_get_place">Trouver le lieu</string>
+    <string name="pick_foul">Choisir une faute</string>
+    <string name="pick_place">Choisir un lieu</string>
+    <string name="title_activity_in_match"></string>
+    <string name="behaviorfoul">Comportement</string>
+    <string name="dmsfoul">Double service manqué</string>
+    <string name="letfoul">Let</string>
+    <string name="oorfoul">En dehors de la limite</string>
+    <string name="atk">Attaque</string>
+    <string name="def">Défense</string>
+    <string name="firstball">1e balle</string>
+    <string name="foul">FAUTE</string>
+    <string name="sndball">2nd balle</string>
+    <string name="endmatch">Fin du match</string>
+    <string name="player1">Joueur 1</string>
+    <string name="player2">Joueur 2</string>
+    <string name="server">Serveur</string>
+    <string name="start">Commencer !</string>
+    <string name="startTime">Heure du début</string>
+    <string name="undisptime">L\'heure ne peut pas être affichée</string>
+</resources>

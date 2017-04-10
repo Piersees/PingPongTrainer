@@ -14,7 +14,7 @@
     tools:showIn="@layout/activity_in_match">
 
     <Button
-        android:text="Match Fini"
+        android:text="@string/endmatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -108,7 +108,7 @@
         android:layout_toEndOf="@+id/scoreJ1" />
 
     <TextView
-        android:text="2eme Balle"
+        android:text="@string/sndball"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView13"
@@ -131,7 +131,7 @@
         />
 
     <Button
-        android:text="Faute"
+        android:text="@string/foul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fautebutton"
@@ -143,7 +143,7 @@
         />
 
     <TextView
-        android:text="1er Balle"
+        android:text="@string/firstball"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
@@ -195,7 +195,7 @@
         android:layout_alignStart="@+id/textView12" />
 
     <Button
-        android:text="Attack"
+        android:text="@string/atk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ptAtkJ1"
@@ -207,7 +207,7 @@
         />
 
     <Button
-        android:text="Attack"
+        android:text="@string/atk"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ptAtkJ2"
@@ -221,7 +221,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ptDefJ2"
-        android:text="Defense"
+        android:text="@string/def"
         android:layout_below="@+id/ptDefJ1"
         android:layout_alignLeft="@+id/ptDefJ1"
         android:layout_alignStart="@+id/ptDefJ1"
@@ -231,7 +231,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fautej2"
-        android:text="Faute"
+        android:text="@string/foul"
         android:layout_alignBaseline="@+id/ptAtkJ2"
         android:layout_alignBottom="@+id/ptAtkJ2"
         android:layout_toRightOf="@+id/ptDefJ2"
@@ -271,7 +271,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ptDefJ1"
-        android:text="Defense"
+        android:text="@string/def"
         android:onClick="myClickHandler"
         android:layout_above="@+id/ptAtkJ2"
         android:layout_toRightOf="@+id/ptAtkJ1"
@@ -281,10 +281,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/fautej1"
-        android:text="Faute"
+        android:text="@string/foul"
         android:onClick="myClickHandler"
         android:layout_above="@+id/fautej2"
-        android:layout_toRightOf="@+id/ptDefJ1"
-        android:layout_toEndOf="@+id/ptDefJ1" />
+        android:layout_toEndOf="@+id/ptDefJ1"
+        android:layout_alignBaseline="@+id/fautebutton"
+        android:layout_alignBottom="@+id/fautebutton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignLeft="@+id/fautebutton"
+        android:layout_alignStart="@+id/fautebutton" />
 
 </RelativeLayout>

@@ -13,20 +13,8 @@
     tools:context="haikal.android.fr.pingpong.NouveauMatchActivity"
     tools:showIn="@layout/activity_nouveau_match">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Name"
-        android:ems="10"
-        android:layout_marginTop="24dp"
-        android:id="@+id/Joueur2"
-        android:layout_below="@+id/Joueur1"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <TextView
-        android:text="Joueur 1"
+        android:text="@string/player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/Joueur2"
@@ -37,7 +25,7 @@
         android:layout_alignParentStart="true" />
 
     <TextView
-        android:text="Joueur 2"
+        android:text="@string/player2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/Joueur2"
@@ -57,20 +45,8 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:layout_marginTop="25dp"
-        android:id="@+id/Joueur1"
-        android:text="Name"
-        android:layout_below="@+id/match"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
     <TextView
-        android:text="Heure de début"
+        android:text="@string/startTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView4"
@@ -79,17 +55,9 @@
         android:layout_marginTop="37dp"
         android:id="@+id/textView5" />
 
-    <TextClock
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textClock"
-        android:layout_alignBaseline="@+id/textView5"
-        android:layout_alignBottom="@+id/textView5"
-        android:layout_alignLeft="@+id/Joueur2"
-        android:layout_alignStart="@+id/Joueur2" />
 
     <Button
-        android:text="Start!"
+        android:text="@string/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -98,5 +66,88 @@
         android:id="@+id/Start"
         android:onClick="myClickHandler"
         />
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/Joueur2"
+        android:layout_alignTop="@+id/Joueur1"
+        android:checkedButton="@+id/server1">
+
+        <RadioButton
+            android:text="@string/server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/server1"
+            android:layout_weight="1"
+            android:layout_alignTop="@+id/Joueur2"
+            android:layout_alignLeft="@+id/server2"
+            android:layout_alignStart="@+id/server2" />
+
+        <RadioButton
+            android:text="@string/server"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/server2"
+            android:layout_weight="1"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp"
+            android:layout_above="@+id/Joueur2"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RadioGroup>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginTop="28dp"
+        android:id="@+id/Joueur1"
+        android:text="Name"
+        android:layout_below="@+id/match"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:layout_marginTop="25dp"
+        android:id="@+id/Joueur2"
+        android:layout_below="@+id/Joueur1"
+        android:layout_alignLeft="@+id/Joueur1"
+        android:layout_alignStart="@+id/Joueur1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewClock"
+        android:layout_alignBaseline="@+id/textView5"
+        android:layout_alignBottom="@+id/textView5"
+        android:layout_alignLeft="@+id/match"
+        android:layout_alignStart="@+id/match"
+        android:text="@string/undisptime" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/Start"
+        android:layout_below="@+id/textView5">
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="11dp"
+            android:layout_marginEnd="11dp" />
+    </RelativeLayout>
 
 </RelativeLayout>
