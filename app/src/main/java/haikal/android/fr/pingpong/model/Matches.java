@@ -8,7 +8,7 @@ public class Matches {
 
 
     private long id;
-    private String location;
+    private double longitude, latitude;
     private long winner_id;
     private long player1;
     private long player2;
@@ -17,8 +17,9 @@ public class Matches {
 
     public Matches(){}
 
-    public Matches(String location, long player1, long player2, String begin_time){
-        this.location=location;
+    public Matches(double latitude, double longitude, long player1, long player2, String begin_time){
+        this.latitude=latitude;
+        this.longitude=longitude;
         this.player1=player1;
         this.player2=player2;
         this.begin_time=begin_time;
@@ -52,9 +53,20 @@ public class Matches {
         return player2;
     }
 
+    public double getLatitude() {
+        return latitude;
+    }
 
-    public String getLocation() {
-        return location;
+    public double getLongitude() {
+        return longitude;
+    }
+
+    public void setLatitude(double latitude) {
+        this.latitude = latitude;
+    }
+
+    public void setLongitude(double longitude) {
+        this.longitude = longitude;
     }
 
     public void setBegin_time(String begin_time) {
@@ -65,10 +77,6 @@ public class Matches {
 
     public void setEnd_time(String end_time) {
         this.end_time = end_time;
-    }
-
-    public void setLocation(String location) {
-        this.location = location;
     }
 
     public void setPlayer1(long player1) {

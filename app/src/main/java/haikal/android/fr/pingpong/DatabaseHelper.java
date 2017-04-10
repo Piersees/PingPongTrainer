@@ -54,7 +54,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
     public static final String COLUMN_PLAYERS_NAME = "name";
 
     /// MATCHES - Columns
-    public static final String COLUMN_MATCHES_LOCATION = "location";
+    public static final String COLUMN_MATCHES_LATITUDE = "latitude";
+    public static final String COLUMN_MATCHES_LONGITUDE = "longitude";
     public static final String COLUMN_MATCHES_BEGIN_TIME = "begin_time";
     public static final String COLUMN_MATCHES_END_TIME = "end_time";
 
@@ -82,7 +83,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 + TABLE_MATCHES + "(" + COLUMN_ID + " INTEGER PRIMARY KEY," + COLUMN_PLAYERONE + " INTEGER,"
                 + COLUMN_PLAYERTWO + " INTEGER," + COLUMN_WINNER + " INTEGER,"
                 + COLUMN_MATCHES_BEGIN_TIME + " DATETIME,"
-                + COLUMN_MATCHES_END_TIME + " DATETIME,"+ COLUMN_MATCHES_LOCATION + " TEXT" + ")";
+                + COLUMN_MATCHES_END_TIME + " DATETIME,"+ COLUMN_MATCHES_LATITUDE + " INTEGER,"
+                + COLUMN_MATCHES_LONGITUDE + " INTEGER"
+                + ")";
         // SETS
 
         private static final String CREATE_TABLE_SETS = "CREATE TABLE "
@@ -186,7 +189,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put(COLUMN_PLAYERONE, match.getPlayer1());
         values.put(COLUMN_PLAYERTWO, match.getPlayer2());
         values.put(COLUMN_MATCHES_BEGIN_TIME, match.getBegin_time());
-        values.put(COLUMN_MATCHES_LOCATION, match.getLocation());
+        values.put(COLUMN_MATCHES_LATITUDE, match.getLatitude());
+        values.put(COLUMN_MATCHES_LONGITUDE, match.getLongitude());
 
         // insert row
         long match_id = db.insert(TABLE_MATCHES, null, values);

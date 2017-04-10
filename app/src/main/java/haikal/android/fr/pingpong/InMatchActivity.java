@@ -59,8 +59,7 @@ public class InMatchActivity extends AppCompatActivity {
         player2.setId(dbh.createPlayer(player2.getName()));
 
         // creating new match instance
-
-        match = new Matches(intent.getStringExtra("location"), player1.getId(), player2.getId(), intent.getStringExtra("time"));
+        match = new Matches(intent.getDoubleExtra("latitude",0), intent.getDoubleExtra("longitude",0), player1.getId(), player2.getId(), intent.getStringExtra("time"));
         // adding match to the database, fetching its id
         match.setId(dbh.createMatch(match));
 

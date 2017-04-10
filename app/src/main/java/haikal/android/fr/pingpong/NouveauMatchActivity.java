@@ -52,6 +52,7 @@ public class NouveauMatchActivity extends AppCompatActivity
     private static final String TAG = NouveauMatchActivity.class.getSimpleName();
     private SupportMapFragment mapFragment;
     private GoogleMap mMap;
+    Marker marker;
     private CameraPosition mCameraPosition;
 
     TextView player1;
@@ -60,6 +61,7 @@ public class NouveauMatchActivity extends AppCompatActivity
     RadioButton server1;
     RadioButton server2;
 
+    private double locationLat, locationLong;
 
     // The entry point to Google Play services, used by the Places API and Fused Location Provider.
     private GoogleApiClient mGoogleApiClient;
@@ -144,7 +146,8 @@ public class NouveauMatchActivity extends AppCompatActivity
                 String formattedDate = df.format(c.getTime());
                 intentIM.putExtra("time", formattedDate);
 
-                intentIM.putExtra("location", "Paris");
+                intentIM.putExtra("latitude", locationLat);
+                intentIM.putExtra("longitude", locationLong);
 
                 if(server1.isChecked()){
                     intentIM.putExtra("server", "1");
@@ -177,6 +180,18 @@ public class NouveauMatchActivity extends AppCompatActivity
 
         // Get the current location of the device and set the position of the map.
         getDeviceLocation();
+
+        googleMap.setOnMapClickListener(new com.google.android.gms.maps.GoogleMap.OnMapClickListener() {
+
+            @Override
+            public void onMapClick(LatLng position) {
+                mMap.clear();
+                marker = mMap.addMarker(new MarkerOptions().position(position));
+                mMap.moveCamera(CameraUpdateFactory.newLatLng(position));
+                locationLat = position.latitude;
+                locationLong = position.longitude;
+            }
+        });
 
     }
 
