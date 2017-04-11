@@ -33,4 +33,16 @@
     <string name="takepic">Prendre photo</string>
     <string name="no_cam">Problème d\'appareil photo</string>
     <string name="no_cam_msg">Pas d\'appareil photo trouvé !</string>
+    <string name="pic_cont_title">Photos du match</string>
+    <string name="no_pic_msg">Il n\'y a pas de photos de ce match</string>
+    <string name="locLat">Latitude du lieu</string>
+    <string name="locLong">Longitude du lieu</string>
+    <string name="markedPoints">Points marqués</string>
+    <string name="matchTitle">Statistiques du match</string>
+    <string name="atkPoints">Points d\'Attaque</string>
+    <string name="defPoints">Points de Défense</string>
+    <string name="endTime">Fin du match</string>
+    <string name="playstatTitle">Statistiques des joueurs</string>
+    <string name="startingtime">Début du match</string>
+    <string name="wonSets">Sets gagnés</string>
 </resources>

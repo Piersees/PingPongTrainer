@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import haikal.android.fr.pingpong.model.Matches;
 import haikal.android.fr.pingpong.model.Sets;
 
@@ -252,6 +255,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         ContentValues values = new ContentValues();
         values.put(COLUMN_MATCH, set.getMatch());
+        values.put(COLUMN_PLAYERONE, set.getPlayer1());
+        values.put(COLUMN_PLAYERTWO, set.getPlayer2());
         values.put(COLUMN_SETS_SCOREONE, set.getScore1());
         values.put(COLUMN_SETS_SCORETWO, set.getScore2());
 
@@ -382,7 +387,203 @@ public class DatabaseHelper extends SQLiteOpenHelper{
                 new String[]{ String.valueOf(match.getId())});
     }
 
+    public List<String> getPics(long match_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_PICTURES_PATH};
 
+        Cursor result = db.query(TABLE_PICTURES, columns, COLUMN_MATCH+"=?",
+                new String[]{String.valueOf(match_id)}, null, null, null);
+        //Cursor result = db.rawQuery("SELECT  * FROM " + TABLE_PICTURES + " WHERE "
+               // + COLUMN_MATCH + " =?", new String[]{match_id});
+
+        List<String> pics = new ArrayList<String>();
+
+        result.moveToFirst();
+        // while there are results
+        while (!result.isAfterLast()) {
+            // add image path to list
+            pics.add(result.getString(0));
+            result.moveToNext();
+        }
+        result.close();
+
+        return pics;
+    }
+
+    public String[] getMatchInfo(long match_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String[] columns = {COLUMN_MATCHES_BEGIN_TIME,COLUMN_MATCHES_END_TIME,COLUMN_MATCHES_LATITUDE,COLUMN_MATCHES_LONGITUDE};
+
+        Cursor result = db.query(TABLE_MATCHES, columns, COLUMN_ID+"=?",
+                new String[]{String.valueOf(match_id)}, null, null, null);
+        //Cursor result = db.rawQuery("SELECT  * FROM " + TABLE_PICTURES + " WHERE "
+        // + COLUMN_MATCH + " =?", new String[]{match_id});
+
+        String nbSets = getNbSets(match_id);
+
+        String[] matchInfo = new String[5];
+        result.moveToFirst();
+
+        // while there are results
+       if(result!=null && result.getCount()>0){
+            // add image path to list
+           matchInfo[0]=result.getString(0);
+           matchInfo[1]=result.getString(1);
+           matchInfo[2]=String.valueOf(result.getLong(2));
+           matchInfo[3]=String.valueOf(result.getLong(3));
+           matchInfo[4]=nbSets;
+        }
+        result.close();
+
+        return matchInfo;
+    }
+
+    public String getNbSets(long match_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String nbSets;
+        Cursor result = db.query(TABLE_SETS, null, COLUMN_MATCH+"=?",
+                new String[]{String.valueOf(match_id)}, null, null, null);
+        nbSets = String.valueOf(result.getCount());
+        return nbSets;
+    }
+
+    public String[] getPlayerNamesID(long match_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        String playerNamesID[] = new String[4];
+
+        long id1, id2;
+
+        // get players ID
+        String[] columns = {COLUMN_PLAYERONE, COLUMN_PLAYERTWO};
+
+        Cursor result = db.query(TABLE_MATCHES, columns, COLUMN_ID+"=?",
+                new String[]{String.valueOf(match_id)}, null, null, null);
+
+        result.moveToFirst();
+        // while there are results
+        if(result!=null && result.getCount()>0){
+            id1 = result.getLong(0);
+            id2 = result.getLong(1);
+            playerNamesID[1]=String.valueOf(id1);
+            playerNamesID[3]=String.valueOf(id2);
+
+            // get player names
+
+            String[] columnName = {COLUMN_PLAYERS_NAME};
+            Cursor name1 = db.query(TABLE_PLAYERS, columnName, COLUMN_ID+"=?",
+                    new String[]{String.valueOf(id1)}, null, null, null);
+            Cursor name2 = db.query(TABLE_PLAYERS, columnName, COLUMN_ID+"=?",
+                    new String[]{String.valueOf(id2)}, null, null, null);
+
+            name1.moveToFirst();
+            name2.moveToFirst();
+
+            if(name1!=null && name1.getCount()>0){
+                playerNamesID[0]=name1.getString(0);
+            }
+            if(name2!=null && name2.getCount()>0){
+                playerNamesID[2]=name2.getString(0);
+            }
+            name1.close();
+            name2.close();
+        }
+        result.close();
+
+
+        return playerNamesID;
+    }
+
+    public int[] getPlayerStats(long match_id, long player_id){
+        SQLiteDatabase db = this.getReadableDatabase();
+        int playerStats[] = new int[9];
+
+        String[] Stats = {TABLE_ACES, TABLE_ATTACK, TABLE_BEHAVIOR, TABLE_DEFENSE, TABLE_DOUBLE_MISSED_SERVICE, TABLE_LETS, TABLE_OUT_OF_RANGE};
+
+        playerStats[0]=getTotalScore(match_id, player_id);
+        playerStats[1]=getSetsWon(match_id, player_id);
+        int i = 2;
+        for (String statTable : Stats) {
+            playerStats[i]=getStat(match_id, player_id, statTable);
+            i++;
+        }
+
+        return playerStats;
+    }
+
+    public int getTotalScore(long match_id, long player_id){
+        int totalScore=0;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // player as player1
+
+        String[] col1 = {COLUMN_SETS_SCOREONE};
+        Cursor result1 = db.query(TABLE_SETS,
+                null,
+                COLUMN_MATCH+"=? AND "+COLUMN_PLAYERONE+"=?",
+                new String[]{String.valueOf(match_id), String.valueOf(player_id)}, null, null, null);
+
+        if(result1.moveToFirst()){
+            // while there are results
+            while (!result1.isAfterLast()) {
+                totalScore= totalScore + (result1.getInt(3));
+                result1.moveToNext();
+            }
+            result1.close();
+        } else{
+
+        }
+
+
+        //player as player2
+
+        String[] col2 = {COLUMN_SETS_SCORETWO};
+        Cursor result2 = db.query(TABLE_SETS,
+                null,
+                COLUMN_MATCH+"=? AND "+COLUMN_PLAYERTWO+"=?",
+                new String[]{String.valueOf(match_id), String.valueOf(player_id)}, null, null, null);
+        result2.moveToFirst();
+        // while there are results
+        while (!result2.isAfterLast()) {
+            totalScore = totalScore+(result2.getInt(4));
+            result2.moveToNext();
+        }
+        result2.close();
+
+        return totalScore;
+    }
+    public int getSetsWon(long match_id, long player_id){
+        int setsWon;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // get set instances
+        Cursor result = db.query(TABLE_SETS, null, COLUMN_MATCH+"=? AND "+COLUMN_WINNER+"=?",
+                new String[]{String.valueOf(match_id), String.valueOf(player_id)}, null, null, null);
+
+        result.moveToFirst();
+
+        if(result!=null && result.getCount()>0){
+            setsWon = result.getCount();
+        }else{
+            setsWon = 0;
+        }
+        return setsWon;
+    }
+    public int getStat(long match_id, long player_id, String statTable){
+        int stat;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        // get stat instances
+        Cursor result = db.query(statTable, null, COLUMN_MATCH+"=? AND "+COLUMN_PLAYER+"=?",
+                new String[]{String.valueOf(match_id), String.valueOf(player_id)}, null, null, null);
+
+        result.moveToFirst();
+        if(result!=null && result.getCount()>0){
+            stat = result.getCount();
+        }else{
+            stat = 0;
+        }
+        return stat;
+    }
 
 }
 

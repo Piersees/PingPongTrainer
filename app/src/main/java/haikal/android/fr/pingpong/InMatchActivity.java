@@ -91,7 +91,8 @@ public class InMatchActivity extends AppCompatActivity {
                     startActivityForResult(takePictureIntent, REQUEST_TAKE_PHOTO);
 
                     // add picture to database
-                    dbh.createPicture(match.getId(), stringUri);
+                    //dbh.createPicture(match.getId(), stringUri);
+                    dbh.createPicture(match.getId(), mCurrentPhotoPath);
                     if (mCurrentPhotoPath != null) {
                         //galleryAddPic();
                         mCurrentPhotoPath = null;
@@ -176,7 +177,7 @@ public class InMatchActivity extends AppCompatActivity {
         match.setId(dbh.createMatch(match));
 
         // creating new set instance
-        currentSet = new Sets(match.getId());
+        currentSet = new Sets(match.getId(), match.getPlayer1(), match.getPlayer2());
         // adding set to the database, fetching its id
         currentSet.setId(dbh.createSet(currentSet));
 
@@ -246,6 +247,16 @@ public class InMatchActivity extends AppCompatActivity {
                             break;
                     }
                 }
+
+                if((currentSet.getScore1() > currentSet.getScore2())){
+                    currentSet.setWinner(player1.getId());
+                    dbh.updateSet(currentSet);
+                }else{
+                    if((currentSet.getScore1() < currentSet.getScore2()))
+                        currentSet.setWinner(player2.getId());
+                        dbh.updateSet(currentSet);
+                }
+
                 Calendar c = Calendar.getInstance();
                 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm");
                 String formattedDate = df.format(c.getTime());
@@ -463,7 +474,7 @@ public class InMatchActivity extends AppCompatActivity {
                 currentServer="1";
                 break;
         }
-        currentSet = new Sets(match.getId());
+        currentSet = new Sets(match.getId(), match.getPlayer1(), match.getPlayer2());
         // adding set to the database, fetching its id
         currentSet.setId(dbh.createSet(currentSet));
         // display score

@@ -42,7 +42,21 @@
     <string name="takepic">Take Picture</string>
     <string name="no_cam">Camera issue</string>
     <string name="no_cam_msg">No camera found !</string>
-    <string name="album_name">PingPongPics</string>
+    <string name="album_name" translatable="false">PingPongPics</string>
+    <string name="pic_cont_title">Match Pictures</string>
+    <string name="no_pic_msg">There are no pictures of this match</string>
+    <string name="matchTitle">Match Statistics</string>
+    <string name="startingtime">Start time</string>
+    <string name="endTime">End Time</string>
+    <string name="totalHits">Total points</string>
+    <string name="totalSets">Total Sets</string>
+    <string name="playstatTitle">Player Statistics</string>
+    <string name="markedPoints">Marked points</string>
+    <string name="wonSets">Won sets</string>
+    <string name="atkPoints">Attack Points</string>
+    <string name="defPoints">Defense Points</string>
+    <string name="locLat">Location Latitude</string>
+    <string name="locLong">Location Longitude</string>
 
 
 </resources>
