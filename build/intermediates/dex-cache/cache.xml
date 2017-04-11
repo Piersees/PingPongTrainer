@@ -192,6 +192,15 @@
     </item>
     <item
         is-multidex="true"
+        jar="C:\Users\Megou\ING4\MOBILE PROGRAMMING\FINAL FINAL PROJECT\app\build\intermediates\exploded-aar\com.jjoe64\graphview\4.2.1\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="987adec819c9a98faf215814f41195da48fc724e">
+        <dex dex="C:\Users\Megou\ING4\MOBILE PROGRAMMING\FINAL FINAL PROJECT\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.jjoe64-graphview-4.2.1_5a9dade0ab26f37f442cfdaa7fc6a932728040be\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="C:\Users\Megou\ING4\MOBILE PROGRAMMING\FINAL FINAL PROJECT\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.0\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -457,7 +466,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="6db71d5751c713073c0440f6f25c71d935766a55">
+        sha1="fcbcd09ec997960d49304e1cb6d10163707d90ae">
         <dex dex="C:\Users\Megou\ING4\MOBILE PROGRAMMING\FINAL FINAL PROJECT\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_d168deff65167a75733acf52c61a89b14746d609\classes.dex" />
     </item>
     <item
@@ -583,7 +592,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
-        sha1="051baaee76c1c48986c2cc6e03d4f18820b844c4">
+        sha1="2985a73aa23c674daf1c7646a47a1a753249fb4f">
         <dex dex="C:\Users\Megou\ING4\MOBILE PROGRAMMING\FINAL FINAL PROJECT\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_4aac764d994be64c11830da0b4bdd4b37aee5290\classes.dex" />
     </item>
     <item

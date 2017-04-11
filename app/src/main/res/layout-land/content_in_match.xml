@@ -255,24 +255,24 @@
         android:layout_alignBottom="@+id/scoreJ1"
         android:layout_alignRight="@+id/fautebutton"
         android:layout_alignEnd="@+id/fautebutton" />
-
     <TextView
         android:text="J2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/p2name"
-        android:layout_above="@+id/ptAtkJ2"
-        android:layout_alignRight="@+id/fautebutton"
-        android:layout_alignEnd="@+id/fautebutton" />
-
+        android:layout_above="@+id/matchEnd"
+        android:layout_alignLeft="@+id/p1name"
+        android:layout_alignStart="@+id/p1name" />
     <TextView
         android:text="J1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/p1name"
-        android:layout_above="@+id/matchEnd"
-        android:layout_alignLeft="@+id/p2name"
-        android:layout_alignStart="@+id/p2name" />
+        android:layout_above="@+id/ptAtkJ2"
+        android:layout_alignRight="@+id/fautebutton"
+        android:layout_alignEnd="@+id/fautebutton" />
+
+
 
     <Button
         android:text="@string/atk"
@@ -291,8 +291,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/ptAtkJ2"
         android:onClick="myClickHandler"
-        android:layout_alignBaseline="@+id/p1name"
-        android:layout_alignBottom="@+id/p1name"
+        android:layout_alignBaseline="@+id/p2name"
+        android:layout_alignBottom="@+id/p2name"
         android:layout_alignLeft="@+id/ptAtkJ1"
         android:layout_alignStart="@+id/ptAtkJ1" />
 

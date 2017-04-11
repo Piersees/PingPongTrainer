@@ -1,0 +1,15 @@
+diff a/.idea/libraries/firebase_messaging_10_2_0.xml b/.idea/libraries/firebase_messaging_10_2_0.xml	(rejected hunks)
+@@ -1,8 +1,13 @@
+ <component name="libraryTable">
+   <library name="firebase-messaging-10.2.0">
+     <CLASSES>
++<<<<<<< HEAD
+       <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/jars/classes.jar!/" />
+       <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/res" />
++=======
++      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/res" />
++      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.google.firebase/firebase-messaging/10.2.0/jars/classes.jar!/" />
++>>>>>>> b38b2886e6de1092eaebdc1ea67353698b38517a
+     </CLASSES>
+     <JAVADOC />
+     <SOURCES />

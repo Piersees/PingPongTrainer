@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="haikal.android.fr.pingpong.GraphActivity">
+    tools:context="haikal.android.fr.pingpong.StatsMatchActivity">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
@@ -19,8 +19,14 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+</android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_graph" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="?attr/actionBarSize">
+            <include layout="@layout/content_stats_match"
+                android:layout_height="wrap_content" />
+    </ScrollView>
 
 </android.support.design.widget.CoordinatorLayout>

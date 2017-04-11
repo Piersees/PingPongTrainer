@@ -45,4 +45,11 @@
     <string name="playstatTitle">Statistiques des joueurs</string>
     <string name="startingtime">Début du match</string>
     <string name="wonSets">Sets gagnés</string>
+    <string name="newMatch">Nouveau Match</string>
+    <string name="no_match_msg">Il n\'y a aucun match enregistré</string>
+    <string name="percAtk">Pourcentage de points d\'Attaque</string>
+    <string name="percDef">Pourcentage de points de Défense</string>
+    <string name="prevMatches">Matches Précédents</string>
+    <string name="totalHits">Total des points</string>
+    <string name="totalSets">Total des Sets</string>
 </resources>

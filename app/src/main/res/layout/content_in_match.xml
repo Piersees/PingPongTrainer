@@ -182,14 +182,14 @@
         android:layout_alignRight="@+id/p1name"
         android:layout_alignEnd="@+id/p1name"
         android:layout_marginTop="25dp"
-        android:id="@+id/p2name" />
+        android:id="@+id/p1name" />
 
     <TextView
         android:text="J1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:id="@+id/p1name"
+        android:id="@+id/p2name"
         android:layout_below="@+id/echange"
         android:layout_alignLeft="@+id/textView12"
         android:layout_alignStart="@+id/textView12" />
@@ -211,8 +211,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ptAtkJ2"
-        android:layout_alignBaseline="@+id/p2name"
-        android:layout_alignBottom="@+id/p2name"
+        android:layout_alignBaseline="@+id/p1name"
+        android:layout_alignBottom="@+id/p1name"
         android:layout_toRightOf="@+id/textView12"
         android:layout_toEndOf="@+id/textView12"
         android:onClick="myClickHandler"/>
@@ -293,8 +293,8 @@
         android:layout_height="wrap_content"
         android:onClick="myClickHandler"
         android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/p2name"
-        android:layout_alignStart="@+id/p2name"
+        android:layout_alignLeft="@+id/p1name"
+        android:layout_alignStart="@+id/p1name"
         android:layout_marginBottom="12dp"
         android:id="@+id/buttonPic" />
 

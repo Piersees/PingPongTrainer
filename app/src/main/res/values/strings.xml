@@ -57,6 +57,18 @@
     <string name="defPoints">Defense Points</string>
     <string name="locLat">Location Latitude</string>
     <string name="locLong">Location Longitude</string>
+    <string name="newMatch">New Match</string>
+    <string name="prevMatches">Previous Matches</string>
+    <string name="title_activity_stats_tab_host" translatable="false">StatsTabHost</string>
+    <string name="section_format" translatable="false">Hello World from section: %1$d</string>
+    <string name="percAtk">Percentage of Attack points</string>
+    <string name="percDef">Percentage of Defense Points</string>
+    <string name="no_match_msg">There aren\'t any matches in the database</string>
+    <string name="matchButton" translatable="false">matchButton</string>
+    <string name="matchButtonname" translatable="false">matchButtonName</string>
+
+    <item type="id" name="buttonType" />
+    <item type="id" name="matchID" />
 
 
 </resources>

@@ -247,7 +247,9 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
             // insert row
             player_id = db.insert(TABLE_PLAYERS, null, values);
+
         }
+
         return player_id;
     }
     public long createSet(Sets set){
@@ -263,6 +265,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         // insert row
         long set_id = db.insert(TABLE_SETS, null, values);
 
+
         return set_id;
     }
     public long createAces(long match, long player, long set, int ballnumber){
@@ -276,6 +279,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         // insert row
         long ace_id = db.insert(TABLE_ACES, null, values);
 
+
         return ace_id;
     }
     public long createAttack(long match, long player, long set){
@@ -287,6 +291,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put(COLUMN_SET, set);
         // insert row
         long attack_id = db.insert(TABLE_ATTACK, null, values);
+
 
         return attack_id;
     }
@@ -312,6 +317,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         // insert row
         long behavior_id = db.insert(TABLE_BEHAVIOR, null, values);
 
+
         return behavior_id;
     }
     public long createLets(long match, long player, long set){
@@ -323,6 +329,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put(COLUMN_SET, set);
         // insert row
         long lets_id = db.insert(TABLE_LETS, null, values);
+
 
         return lets_id;
     }
@@ -336,6 +343,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
 
         // insert row
         long oor_id = db.insert(TABLE_OUT_OF_RANGE, null, values);
+
 
         return oor_id;
     }
@@ -359,6 +367,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         values.put(COLUMN_PICTURES_PATH, path);
         // insert row
         long pic_id = db.insert(TABLE_PICTURES, null, values);
+
 
         return pic_id;
     }
@@ -385,6 +394,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         // updating row
         db.update(TABLE_MATCHES, values, COLUMN_ID + " = ?",
                 new String[]{ String.valueOf(match.getId())});
+
     }
 
     public List<String> getPics(long match_id){
@@ -406,6 +416,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             result.moveToNext();
         }
         result.close();
+
 
         return pics;
     }
@@ -435,7 +446,15 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         }
         result.close();
 
+
         return matchInfo;
+    }
+
+    public void removeLastSet(Sets set){
+        String[] whereArgs = {String.valueOf(set.getId())};
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_SETS, COLUMN_ID+"=?", whereArgs);
+
     }
 
     public String getNbSets(long match_id){
@@ -444,6 +463,7 @@ public class DatabaseHelper extends SQLiteOpenHelper{
         Cursor result = db.query(TABLE_SETS, null, COLUMN_MATCH+"=?",
                 new String[]{String.valueOf(match_id)}, null, null, null);
         nbSets = String.valueOf(result.getCount());
+
         return nbSets;
     }
 
@@ -488,6 +508,8 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             name2.close();
         }
         result.close();
+
+
 
 
         return playerNamesID;
@@ -583,6 +605,65 @@ public class DatabaseHelper extends SQLiteOpenHelper{
             stat = 0;
         }
         return stat;
+    }
+
+    public List<String[]>getMatchListInfo(){
+
+        List<String[]> matchInfo = new ArrayList<>();
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        long pid1, pid2;
+
+        String[] columns = {COLUMN_MATCHES_BEGIN_TIME, COLUMN_PLAYERONE, COLUMN_PLAYERTWO, COLUMN_ID};
+
+        String[] col = {COLUMN_PLAYERS_NAME};
+        Cursor result = db.query(TABLE_MATCHES, columns, null, null, null, null, null);
+
+        result.moveToFirst();
+        // while there are results
+        while (!result.isAfterLast()) {
+            String[] instance = new String[4];
+            instance[0]=result.getString(0);
+            long match_id = result.getLong(3);
+
+            Log.d("MATCH ID", String.valueOf(match_id));
+
+            instance[3]=String.valueOf(match_id);
+
+            pid1 = result.getLong(1);
+            pid2 = result.getLong(2);
+
+                Cursor res = db.query(TABLE_PLAYERS, col, COLUMN_ID + "=?",
+                        new String[]{String.valueOf(pid1)}, null, null, null);
+
+                res.moveToFirst();
+                if(res!=null && res.getCount()>0){
+                    instance[1] = res.getString(0);
+                }else{
+                    instance[1] = "??";
+                }
+                res.close();
+
+                Cursor res2 = db.query(TABLE_PLAYERS, col, COLUMN_ID + "=?",
+                        new String[]{String.valueOf(pid2)}, null, null, null);
+
+                res2.moveToFirst();
+                if(res2!=null && res2.getCount()>0){
+                    instance[2] = res2.getString(0);
+                }else{
+                    instance[2] = "??";
+                }
+                res2.close();
+
+            matchInfo.add(instance);
+
+            result.moveToNext();
+        }
+
+        result.close();
+
+
+        return matchInfo;
     }
 
 }

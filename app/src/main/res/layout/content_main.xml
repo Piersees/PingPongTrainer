@@ -16,7 +16,7 @@
     >
 
     <Button
-        android:text="Nouveau Match"
+        android:text="@string/newMatch"
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/NvMatch"
@@ -29,10 +29,10 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Stats Club"
+        android:text="@string/prevMatches"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:id="@+id/StatsClub"
+        android:id="@+id/PrevMatches"
         android:elevation="24dp"
         android:background="@drawable/stats_club"
         android:textAppearance="@style/TextAppearance.AppCompat.Button"

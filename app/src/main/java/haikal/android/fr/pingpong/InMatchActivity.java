@@ -251,10 +251,11 @@ public class InMatchActivity extends AppCompatActivity {
                 if((currentSet.getScore1() > currentSet.getScore2())){
                     currentSet.setWinner(player1.getId());
                     dbh.updateSet(currentSet);
-                }else{
-                    if((currentSet.getScore1() < currentSet.getScore2()))
+                }else if((currentSet.getScore1() < currentSet.getScore2())){
                         currentSet.setWinner(player2.getId());
                         dbh.updateSet(currentSet);
+                }else{
+                    dbh.removeLastSet(currentSet);
                 }
 
                 Calendar c = Calendar.getInstance();
@@ -264,6 +265,8 @@ public class InMatchActivity extends AppCompatActivity {
                 dbh.updateMatch(match);
 
                 intentSM.putExtra("match",match.getId());
+
+                dbh.close();
 
                 startActivity(intentSM);
                 break;

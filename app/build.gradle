@@ -30,4 +30,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-maps:10.2.0'
     compile 'com.google.android.gms:play-services-location:10.2.0'
     compile 'com.google.android.gms:play-services:10.2.0'
+    compile 'com.jjoe64:graphview:4.2.1'
+
+
 }
